@@ -1,6 +1,12 @@
+/******
+Placing line 12 in the right place was the key to success here. I'm scared for what's to come.
+******/
+
+#include <stdio.h>
+
 int main()
 {
-    int data[2001] = {0};
+    int data[2000] = {0};
     int prev = 0;
     int increase = 0;
     for (int i = 0; i < 2000; i++) {
