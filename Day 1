@@ -1,0 +1,16 @@
+int main()
+{
+    int data[2001] = {0};
+    int prev = 0;
+    int increase = 0;
+    for (int i = 0; i < 2000; i++) {
+        if(i!=0) {
+         if(data[i] > prev) {
+                increase+=1;
+            }
+        }
+        prev = data[i];
+    }
+    printf("%d", increase);
+    return 0;
+}
