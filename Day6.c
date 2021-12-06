@@ -2,14 +2,15 @@
 Part 2 just change DAYS on #7 if you want part 1.
 ****/
 
+
 #include <stdio.h>
 
 #define DAYS 256
 
 int main() {
-    int data[300] = {};
-    __uintmax_t buff[9] = {0};
-    __uintmax_t fresh[9] = {0};
+    __uint8_t data[300] = {1,2,1,3,2,1,1,5,1,4,1,2,1,4,3,3,5,1,1,3,5,3,4,5,5,4,3,1,1,4,3,1,5,2,5,2,4,1,1,1,1,1,1,1,4,1,4,4,4,1,4,4,1,4,2,1,1,1,1,3,5,4,3,3,5,4,1,3,1,1,2,1,1,1,4,1,2,5,2,3,1,1,1,2,1,5,1,1,1,4,4,4,1,5,1,2,3,2,2,2,1,1,4,3,1,4,4,2,1,1,5,1,1,1,3,1,2,1,1,1,1,4,5,5,2,3,4,2,1,1,1,2,1,1,5,5,3,5,4,3,1,3,1,1,5,1,1,4,2,1,3,1,1,4,3,1,5,1,1,3,4,2,2,1,1,2,1,1,2,1,3,2,3,1,4,5,1,1,4,3,3,1,1,2,2,1,5,2,1,3,4,5,4,5,5,4,3,1,5,1,1,1,4,4,3,2,5,2,1,4,3,5,1,3,5,1,3,3,1,1,1,2,5,3,1,1,3,1,1,1,2,1,5,1,5,1,3,1,1,5,4,3,3,2,2,1,1,3,4,1,1,1,1,4,1,3,1,5,1,1,3,1,1,1,1,2,2,4,4,4,1,2,5,5,2,2,4,1,1,4,2,1,1,5,1,5,3,5,4,5,3,1,1,1,2,3,1,2,1,1};
+    __uint64_t buff[9] = {0};
+    __uint64_t fresh[9] = {0};
 
     for(int x = 0; x < 300; x++) {
         switch(data[x]) {
@@ -96,13 +97,12 @@ int main() {
         }
     }
 
-    printf("Just use a calculator cause I can't be arsed to convert it to strings.\n");
-    __uintmax_t totalFish = 0;
+    __uint64_t totalFish = 0;
     for(int fishCount = 0; fishCount < 9; fishCount++) {
-        printf("%ul\n", buff[fishCount]);
+        totalFish += buff[fishCount];
     }
 
-    printf("%d\n", totalFish);
+    printf("%lu\n", totalFish);
     
     return 0;
 }
