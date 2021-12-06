@@ -12,7 +12,7 @@ int main() {
     __uint64_t buff[9] = {0};
     __uint64_t fresh[9] = {0};
 
-    for(int x = 0; x < 300; x++) {
+    for(__uint16_t x = 0; x < 300; x++) {
         switch(data[x]) {
             case 0:
                 buff[0] += 1;
@@ -44,8 +44,8 @@ int main() {
         }
     }
 
-    for(int i = 0; i < DAYS; i++) {
-        for(int fish = 8; fish >= 0; fish--) {
+    for(__int16_t i = 0; i < DAYS; i++) {
+        for(__int8_t fish = 8; fish >= 0; fish--) {
             switch(fish) {
                 case 0:
                     buff[6] += buff[0];
@@ -90,18 +90,16 @@ int main() {
                     break;
                 case 8:
                     fresh[7] += buff[8];
-                    buff[8] = fresh[8];
-                    fresh[8] = 0;
+                    buff[8] = 0;
                     break;
             }
         }
     }
 
     __uint64_t totalFish = 0;
-    for(int fishCount = 0; fishCount < 9; fishCount++) {
+    for(__uint8_t fishCount = 0; fishCount < 9; fishCount++) {
         totalFish += buff[fishCount];
     }
-
     printf("%lu\n", totalFish);
     
     return 0;
